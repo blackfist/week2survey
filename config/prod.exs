@@ -63,5 +63,5 @@ config :kdt_survey_02, KdtSurvey_02.Endpoint,
 # Configure your database
 config :kdt_survey_02, KdtSurvey_02.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL")
+  url: System.get_env("DATABASE_URL"),
   pool_size: 20
