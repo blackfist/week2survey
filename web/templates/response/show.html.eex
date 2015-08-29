@@ -1,0 +1,43 @@
+<h2>Show response</h2>
+
+<ul>
+
+  <li>
+    <strong>Week1:</strong>
+    <%= @response.week1 %>
+  </li>
+
+  <li>
+    <strong>Read:</strong>
+    <%= @response.read %>
+  </li>
+
+  <li>
+    <strong>Video:</strong>
+    <%= @response.video %>
+  </li>
+
+  <li>
+    <strong>Exercise:</strong>
+    <%= @response.exercise %>
+  </li>
+
+  <li>
+    <strong>Warmup:</strong>
+    <%= @response.warmup %>
+  </li>
+
+  <li>
+    <strong>Helpful:</strong>
+    <%= @response.helpful %>
+  </li>
+
+  <li>
+    <strong>Nervous:</strong>
+    <%= @response.nervous %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: response_path(@conn, :edit, @response) %>
+<%= link "Back", to: response_path(@conn, :index) %>

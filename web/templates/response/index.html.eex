@@ -1,0 +1,38 @@
+<h2>Listing responses</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Week1</th>
+      <th>Read</th>
+      <th>Video</th>
+      <th>Exercise</th>
+      <th>Warmup</th>
+      <th>Helpful</th>
+      <th>Nervous</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for response <- @responses do %>
+    <tr>
+      <td><%= response.week1 %></td>
+      <td><%= response.read %></td>
+      <td><%= response.video %></td>
+      <td><%= response.exercise %></td>
+      <td><%= response.warmup %></td>
+      <td><%= response.helpful %></td>
+      <td><%= response.nervous %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: response_path(@conn, :show, response), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: response_path(@conn, :edit, response), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: response_path(@conn, :delete, response), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New response", to: response_path(@conn, :new) %>
