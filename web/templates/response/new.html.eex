@@ -1,6 +1,4 @@
-<h2>New response</h2>
+<h2>Survey Questions</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: response_path(@conn, :create) %>
-
-<%= link "Back", to: response_path(@conn, :index) %>

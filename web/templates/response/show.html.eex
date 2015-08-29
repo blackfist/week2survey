@@ -1,43 +1,25 @@
-<h2>Show response</h2>
+<h2>Survey Response</h2>
 
-<ul>
+<p><strong>What did you think of week 1?</strong></p>
+<p><%= @response.week1 %></p>
 
-  <li>
-    <strong>Week1:</strong>
-    <%= @response.week1 %>
-  </li>
+<p><strong>Did you do the reading from week 1?</strong></p>
+<p><%= @response.read %>
 
-  <li>
-    <strong>Read:</strong>
-    <%= @response.read %>
-  </li>
+<p><strong>Did you watch the videos from week 1?</strong></p>
+<p><%= @response.video %>
 
-  <li>
-    <strong>Video:</strong>
-    <%= @response.video %>
-  </li>
+<p><strong>Did you do the exercises in the week 1 todo list?</strong></p>
+<p><%= @response.exercise %>
 
-  <li>
-    <strong>Exercise:</strong>
-    <%= @response.exercise %>
-  </li>
+<p><strong>What did you think of the warm ups we did in class on Wednesday?</strong></p>
+<p><%= @response.warmup %>
 
-  <li>
-    <strong>Warmup:</strong>
-    <%= @response.warmup %>
-  </li>
+<p><strong>Can Kevin be more helpful on warmups during class?</strong></p>
+<p><%= @response.helpful %>
 
-  <li>
-    <strong>Helpful:</strong>
-    <%= @response.helpful %>
-  </li>
+<p><strong>What are you nervous about regarding this class?</strong></p>
+<p><%= @response.nervous %></p>
 
-  <li>
-    <strong>Nervous:</strong>
-    <%= @response.nervous %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: response_path(@conn, :edit, @response) %>
+<hr />
 <%= link "Back", to: response_path(@conn, :index) %>
