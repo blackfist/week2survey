@@ -16,7 +16,8 @@ defmodule KdtSurvey_02.Router do
   scope "/", KdtSurvey_02 do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ResponseController, :new
+    get "/thanks", PageController, :thanks
     resources "/responses", ResponseController
   end
 

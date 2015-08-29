@@ -22,7 +22,8 @@ defmodule KdtSurvey_02.ResponseController do
       {:ok, _response} ->
         conn
         |> put_flash(:info, "Response created successfully.")
-        |> redirect(to: response_path(conn, :index))
+        |> redirect(to: page_path(conn, :thanks))
+      #  |> redirect(to: response_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
