@@ -13,6 +13,15 @@
 // to also remove its path from "config.paths.watched".
 import "deps/phoenix_html/web/static/js/phoenix_html"
 
+import {Socket} from "deps/phoenix/web/static/js/phoenix"
+
+let socket = new Socket("/socket")
+socket.connect()
+let chan = socket.channel("rooms:lobby", {})
+chan.join().receive("ok", chan => {
+  console.log("Welcome to Phoenix Chat!")
+})
+
 // Import local files
 //
 // Local files can be imported directly using relative

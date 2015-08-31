@@ -1,2 +1,23 @@
 <h1>Thank you for the feedback!</h1>
 <p>I'll use this information to try and make the class better for you.</p>
+
+<div id="messages" class="container">
+</div>
+
+<hr>
+<p>Now say something to your classmates</p>
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input id="username" type="text" class="form-control" placeholder="username">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-sm-9">
+        <input id="message-input" class="form-control" />
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div>
+</div>

@@ -2,7 +2,7 @@ defmodule KdtSurvey_02.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", KdtSurvey_02.RoomChannel
+  channel "rooms:*", KdtSurvey_02.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
