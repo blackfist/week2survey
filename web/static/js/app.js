@@ -15,12 +15,32 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 
 import {Socket} from "deps/phoenix/web/static/js/phoenix"
 
+let chatInput         = $("#message-input")
+let nameInput         = $('#username')
+let messagesContainer = $("#messages")
+
 let socket = new Socket("/socket")
 socket.connect()
 let chan = socket.channel("rooms:lobby", {})
+
+chatInput.on("keypress", event => {
+  if(event.keyCode === 13){
+    chan.push("new_msg", {body: nameInput.val() + ": " + chatInput.val()})
+    chatInput.val("")
+  }
+})
+
+chan.on("new_msg", payload => {
+  messagesContainer.append(`<br/>${payload.body}`)
+})
+
 chan.join().receive("ok", chan => {
   console.log("Welcome to Phoenix Chat!")
 })
+
+
+
+
 
 // Import local files
 //
